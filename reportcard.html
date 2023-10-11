@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <input type="text" id="name" placeholder="enter your name">
+        <br>
+        <br>
+        <input type="text" id="std" placeholder="enter your std">
+        <br> <br>
+        <input type="text" id="math" placeholder="math marks">
+        <br> <br>
+        <input type="text" id="sci" placeholder="sci marks">
+        <br> <br>
+        <input type="text" id="eng" placeholder="english marks">
+        <br> <br>
+        <input type="text" id="hindi" placeholder="hindi marks">
+        <br> <br>
+        <input type="text" id="history" placeholder="history marks">
+        <br> <br>
+        <button onclick="swaping()">find value</button>
+    </center>
+    <p id="show"></p>
+    <table border="1" width="500px">
+        <tr>
+            <th colspan="2" id="sname" align="left">name</th>
+            <th id="sstd">std</th>
+        </tr>
+        <tr>
+            <th>subject</th>
+            <th>score</th>
+            <th>garde</th>
+        </tr>
+        <tr>
+            <td>Math</td>
+            <td id="maths"></td>
+            <td id="mathg"></td>
+        </tr>
+        <tr>
+            <td>Sci</td>
+            <td id="scis"></td>
+            <td id="scig"></td>
+        </tr>
+        <tr>
+            <td>Eng</td>
+            <td id="engs"></td>
+            <td id="engg"></td>
+        </tr>
+        <tr>
+            <td>Hindi</td>
+            <td id="hindis"></td>
+            <td id="hindig"></td>
+        </tr>
+        <tr>
+            <td>History</td>
+            <td id="historys"></td>
+            <td id="historyg"></td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <th id="totalMark"></th>
+            <th id="avr"></th>
+        </tr>
+    </table>
+    <script>
+        function swaping() {
+            let name = document.getElementById('name').value;
+            let std = parseInt(document.getElementById('std').value);
+            let math = parseInt(document.getElementById('math').value);
+            let sci = parseInt(document.getElementById('sci').value);
+            let eng = parseInt(document.getElementById('eng').value);
+            let hindi = parseInt(document.getElementById('hindi').value);
+            let history = parseInt(document.getElementById('history').value);
+            let all = [math,sci,eng,hindi,history];
+            let total = math + sci+eng+hindi+history;
+            let avr =( total*100)/500;
+            let grade = [];
+            console.log(all)
+            for(let i = 0 ; i< all.length; i++){
+                
+                if(all[i] > 90){
+                    grade[i] = 'A+';
+                    console.log(all[i], grade[i])
+                }
+                else if(all[i]>80){
+                    grade[i] = 'A';
+                    
+                    console.log(all[i], grade[i])
+                }
+                else if(all[i]>70){
+                    grade[i] = 'B+';
+                    
+                    console.log(all[i], grade[i])
+                }
+                else if(all[i]>60){
+                    grade[i] = 'B';
+                    console.log(all[i], grade[i])
+                }
+                else if(all[i]>50){
+                    grade[i] = 'C+';
+                    console.log(all[i], grade[i])
+                }
+                else{
+                    grade[i] = 'C';
+                    console.log(all[i], grade[i])
+                }
+            }
+           
+            document.getElementById("sname").innerHTML = name;
+            document.getElementById("sstd").innerHTML =std;
+            document.getElementById("maths").innerHTML = all[0];
+            document.getElementById("scis").innerHTML = all[1];
+            document.getElementById("engs").innerHTML = all[2];
+            document.getElementById("hindis").innerHTML = all[3];
+            document.getElementById("historys").innerHTML = all[4];
+            document.getElementById("mathg").innerHTML = grade[0];
+            document.getElementById("scig").innerHTML = grade[1];
+            document.getElementById("engg").innerHTML = grade[2];
+            document.getElementById("hindig").innerHTML = grade[3];
+            document.getElementById("historyg").innerHTML = grade[4];
+            document.getElementById("totalMark").innerHTML = total;
+            document.getElementById("avr").innerHTML =avr;
+        }
+    </script>
+</body>
+
+</html>
