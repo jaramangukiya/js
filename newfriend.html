@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter Your age" id="age">
+    <button onclick="swaping()">Find Friend</button>
+    <p id="show"></p>
+    <script>
+        function swaping(){
+            let age = parseInt(document.getElementById('age').value);
+            if(age < 13){
+            document.getElementById("show").innerHTML = '1 kms';
+            }
+            else if(age >= 13 && age <18){
+                document.getElementById("show").innerHTML = '5 kms';
+            }
+            else if (age >= 18 && age <30){
+                document.getElementById("show").innerHTML = '10 kms';
+            }
+            else{
+                document.getElementById("show").innerHTML = 'You can have friends from anywhere';
+            }
+        }
+    </script>
+</body>
+</html>
