@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="" id="min" placeholder="enter min number">
+    <input type="number" name="" id="max" placeholder="enter max number">
+    <button onclick="loop()">check number</button>
+    <script>
+        function loop(){
+            min = parseInt(document.getElementById('min').value);
+            max = parseInt(document.getElementById('max').value);
+            for ( i = min ; i < max ; i++){
+                document.write( i + '<br>');
+            }
+        }
+    </script>
+</body>
+</html>
